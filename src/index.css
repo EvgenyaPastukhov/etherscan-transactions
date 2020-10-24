@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h2 {
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.app-header {
+  padding: 1rem 0;
+}
+
+.transactions {
+  display: block;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.transactions table {
+  background: #eee;
+  display: block;
+  padding: 1rem;
+  margin: 10px auto;
+  width: 750px;
+}
+
+.transactions table th {
+  padding-right: 1rem;
+}
+
+.address-input {
+  margin: 5px;
+  font-size: 1rem;
+  height: 40px;
+  width: 430px;
+}
+
+.send-button {
+  background-color: rgb(80, 187, 201);
+  border: none;
+  height: 40px;
+  width: 100px;
+}
+
+.send-button:disabled {
+  background-color: rgb(211, 210, 210);
+}
+
+.error-message {
+  margin: 10px auto;
+  text-align: center;
+}
+
+
