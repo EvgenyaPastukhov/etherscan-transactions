@@ -35,9 +35,11 @@ function TransactionsList(props) {
     );
   });
 
-  return (<div className='transactions'>
-    {transactionsList}
-  </div>);
+  return (
+    <div className='transactions'>
+      {transactionsList}
+    </div>
+  );
 
 }
 
@@ -50,9 +52,7 @@ class App extends React.Component {
       myKeyToken: 'Z9FFQ46HVMZQDSKPHIGZZDHNNU79WQC48I',
       transactions: [],
       requestProcessing: false,
-      error: {
-        message: '' 
-      }
+      error: ''
     }
   }
 
@@ -79,33 +79,25 @@ class App extends React.Component {
             this.setState({
               transactions: payload.result,
               requestProcessing: false,
-              error: {
-                message: ''
-              }
+              error: ''
             })
           }
           
           if (payload.status === '0') {
             this.setState({
-              error: {
-                message: 'Error! Invalid address format'
-              },
+              error: 'Error! Invalid address format',
               requestProcessing: false
             });
           }
         } else {
            this.setState({
-             error: {
-               message: 'Unable to fetch transactions'
-             },
+             error: 'Unable to fetch transactions',
              requestProcessing: false
            })
         } 
       } catch(e) {
         this.setState({
-          error: {
-            message: 'Unable to fetch transactions, please check site address or your internet network'
-          },
+          error: 'Unable to fetch transactions, please check site address or your internet network',
           requestProcessing: false
         })
       }
@@ -140,9 +132,9 @@ class App extends React.Component {
             >Send
           </button>
 
-          {this.state.error.message.length > 0 && (
+          {this.state.error.length > 0 && (
              <div className='error-message'>
-               {this.state.error.message}
+               {this.state.error}
              </div>
           )}
           {this.state.transactions.length > 0 && (
